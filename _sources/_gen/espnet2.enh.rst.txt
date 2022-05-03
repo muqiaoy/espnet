@@ -334,6 +334,17 @@ espnet2.enh.separator.neural_beamformer
     :show-inheritance:
 
 
+.. _espnet2.enh.separator.demucs_separator:
+
+espnet2.enh.separator.demucs_separator
+--------------------------------------
+
+.. automodule:: espnet2.enh.separator.demucs_separator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 .. _espnet2.enh.separator.conformer_separator:
 
 espnet2.enh.separator.conformer_separator
@@ -494,6 +505,17 @@ espnet2.enh.layers.complex_utils
 --------------------------------
 
 .. automodule:: espnet2.enh.layers.complex_utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+.. _espnet2.enh.layers.demucs:
+
+espnet2.enh.layers.demucs
+-------------------------
+
+.. automodule:: espnet2.enh.layers.demucs
     :members:
     :undoc-members:
     :show-inheritance:
