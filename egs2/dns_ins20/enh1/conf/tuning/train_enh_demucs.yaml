@@ -1,0 +1,57 @@
+optim: adam
+init: xavier_uniform
+max_epoch: 100
+batch_type: folded
+batch_size: 128 # batch_size 16 can be trained on 4 RTX 2080ti
+iterator_type: chunk
+chunk_length: 40000
+num_workers: 4
+optim_conf:
+    lr: 3.0e-04
+    betas:
+    - 0.9
+    - 0.999
+    weight_decay: 0
+patience: 4
+val_scheduler_criterion:
+- valid
+- loss
+best_model_criterion:
+-   - valid
+    - l1_td
+    - max
+-   - valid
+    - loss
+    - min
+keep_nbest_models: 1
+scheduler: reducelronplateau
+scheduler_conf:
+    mode: min
+    factor: 0.5
+    patience: 1
+encoder: same
+decoder: same
+separator: demucs
+    chin: 1
+    chout: 1
+    hidden: 64
+    max_hidden: 10000
+    causal: true
+    glu: true
+    depth: 5
+    kernel_size: 8
+    stride: 4
+    normalize: true
+    resample: 4
+    growth: 2
+    rescale: 0.1
+
+criterions: 
+  # The first criterion
+  - name: l1_td 
+    conf:
+      name: 
+    wrapper: pit
+    wrapper_conf:
+      weight: 1.0
+      independent_perm: True
